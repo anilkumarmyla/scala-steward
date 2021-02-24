@@ -41,7 +41,8 @@ final class PruningAlg[F[_]](implicit
     F: Monad[F]
 ) {
   def needsAttention(data: RepoData): F[(Boolean, List[Update.Single])] = {
-    val ignoreScalaDependency = data.config.updates.includeScalaOrDefault == IncludeScalaStrategy.No
+    val ignoreScalaDependency =
+      data.config.updates.includeScalaOrDefault === IncludeScalaStrategy.No
     val dependencies = data.cache.dependencyInfos
       .flatMap(_.sequence)
       .collect {

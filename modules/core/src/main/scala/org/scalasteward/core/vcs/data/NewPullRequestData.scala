@@ -224,6 +224,6 @@ object NewPullRequestData {
       head = branchName,
       base = data.baseBranch,
       draft = updateHasScalaDependency(data.update) &&
-        (data.repoData.config.updates.includeScalaOrDefault == IncludeScalaStrategy.Draft)
+        (data.repoData.config.updates.includeScalaOrDefault === IncludeScalaStrategy.Draft)
     )
 }
