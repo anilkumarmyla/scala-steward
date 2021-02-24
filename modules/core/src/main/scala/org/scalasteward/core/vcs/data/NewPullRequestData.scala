@@ -38,7 +38,8 @@ final case class NewPullRequestData(
     title: String,
     body: String,
     head: String,
-    base: Branch
+    base: Branch,
+    draft: Boolean = false
 )
 
 object NewPullRequestData {
